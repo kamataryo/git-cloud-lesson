@@ -3,7 +3,7 @@ task :start do
 end
 
 task :build do
-  sh 'jekyll', 'build', '-s', './docs'
+  sh 'jekyll', 'build', '-s', './docs', '--watch'
 end
 
 task :deploy do
