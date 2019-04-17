@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - 2.5.3
+
+cache:
+  directories:
+    - vendor/bundler
+
+script:
+  - bundle install --path vendor/bundler
+  - bundle exec jekyll build -s ./docs
