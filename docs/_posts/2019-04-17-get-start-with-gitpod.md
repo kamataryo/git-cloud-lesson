@@ -1,10 +1,13 @@
 ---
 layout: post
-title: 'Gitpod を使う'
+title: get-start-with-gitpod
 date: 2019-04-17 13:00:00 +0900
-categories: git, github, gitpod
+categories: gitpod
 author: kamataryo
 ---
+
+# Gitpod を使う
+
 [GitHub](https://github.com) と [Gitpod](https://gitpod.io) を連携して利用する方法について解説します。
 
 ## GitHub でリポジトリを作成する

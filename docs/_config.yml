@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Git の操作をクラウドで取得する
+title: クラウドで Git を扱うレッスン
 email: kamata.y.ryo+github.com@gmail.com
 description: これはLD授業のレジュメです。
 baseurl: '/git-cloud-lesson'
