@@ -17,7 +17,7 @@ title: クラウドで Git を扱うレッスン
 email: kamata.y.ryo+github.com@gmail.com
 description: これはLD授業のレジュメです。
 baseurl: 'git-cloud-lesson'
-url: 'https://kamataryo.gihub.io' # the base hostname & protocol for your site, e.g. http://example.com
+url: 'https://kamataryo.github.io' # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: kamataryo_
 github_username: kamataryo
 
