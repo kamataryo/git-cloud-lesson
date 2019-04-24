@@ -38,12 +38,16 @@ NOTE: 学内の環境から GitHub のアカウントを作成しようとする
 
 ## Gitpod の登録
 
-GitHub にサインインした状態で [gitpod.io](https://gitpod.io) にアクセスし、右上の `Go to app` のボタンをクリックします。 `Sign in to GitHub to continue to Gitpod` と表示され、GitHub のアカウントを使って Gitpod の利用を開始することができるようになります。
+GitHub にサインインした状態で [gitpod.io](https://gitpod.io) にアクセスし、右上の `Go to app` のボタンをクリックします。
+
+![gitpod goto app]({{ site.url }}/{{ site.baseurl }}/images/gitpod-go-to-app.png)
+
+`Sign in to GitHub to continue to Gitpod` と表示され、GitHub のアカウントを使って Gitpod の利用を開始することができるようになります。
 
 ![authorization]({{ site.url }}/{{ site.baseurl }}/images/github-to-gitpod.png)
 
-これは、Twitter でログインする、Facebook でログインする、などと同じ機能です。
+これは、Twitter でログインする、Facebook でログインする、などと同じ機能です。例えば Instagram に登録するときは、以下のような画面で Facebook から登録するオプションがあるのが分かります。
 
-![インスタグラムの Facebook でログインするの例]({{ site.url }}/{{ site.baseurl }}/images/login-with-facebook.png)
+![インスタグラムの Facebook でログインする例]({{ site.url }}/{{ site.baseurl }}/images/login-with-facebook.png)
 
 ここまでで、 GitHub と連携して Gitpod 使用することができるようになりました。
