@@ -70,7 +70,7 @@ https://gitpod.io#https://github.com/kamataryo/sandbox-gitpod
 ## Gitpod のプレビューを行う
 
 作成した HTML がどのようにウェブページとして表示されるのかを確認します。
-ページ下部に表示されているコンソールに、以下のコマンドを入力してください。
+ページ下部に表示されているコンソール（`gitpod /workspace/sandbox-gitpod $` などのような表示とともに、キーボードでの入力が可能なエリアがあります）に、以下のコマンドを入力してください。
 
 ```shell
 python3 -m http.server 3000
@@ -81,6 +81,8 @@ python3 -m http.server 3000
 ![プレビュー]({{ site.url }}/{{ site.baseurl }}/images/20190417_120_gitpod_preview.png)
 
 `Open Browser` というボタンをクリックすると、書いた HTML がブラウザで表示されます。
+
+この状態だと、ターミナルにコマンドの入力ができない状態になっているはずです。 `Control + C` でキャンセルすると、再度入力可能な状態に戻ります。
 
 ## 作成した内容を GitHub にプッシュする
 
