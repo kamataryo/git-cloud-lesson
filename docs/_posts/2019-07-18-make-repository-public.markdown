@@ -16,19 +16,20 @@ author: kamataryo
 
 ## 手順
 
-- 1. プライベートリポジトリの `Settings` を開く
+1) プライベートリポジトリの `Settings` を開く
 
   ![settings]({{ site.url }}/{{ site.baseurl }}/images/20190718_01.png)
 
-- 2. 下部の `Danger Zone` にある `Make public` ボタンを押す
+2) 下部の `Danger Zone` にある `Make public` ボタンを押す
 
   ![danger zone]({{ site.url }}/{{ site.baseurl }}/images/20190718_02.png)
 
-- 3. ダイアログが出現するのでよく読む。公開設定にすると不特定多数がリポジトリを見ることができる、という旨が書かれている
-- 4. リポジトリ名を入力して、 `I understand, make this repository public.` というボタンを押す。この操作で間違って別のリポジトリの設定変更を行なっていないかをあなた自身が確認できる
+3) ダイアログが出現するのでよく読む。公開設定にすると不特定多数がリポジトリを見ることができる、という旨が書かれている
+
+4) リポジトリ名を入力して、 `I understand, make this repository public.` というボタンを押す。この操作で間違って別のリポジトリの設定変更を行なっていないかをあなた自身が確認できる
 
   ![dialog]({{ site.url }}/{{ site.baseurl }}/images/20190718_03.png)
 
-- 5. パスワードの入力を求められるので入力する
+5) パスワードの入力を求められるので入力する
 
   以上です。なお、同様の手順でリポジトリをプライベートの設定にすることも可能です。
