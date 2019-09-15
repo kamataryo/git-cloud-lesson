@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Google アカウントを作成して Gmail を使えるようにする
-date: 2019-09-15 12:00:00 +0900
+date: 2019-09-15 09:00:00 +0900
 categories: google
 author: kamataryo
 ---
