@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://kamataryo.github.io/git-cloud-lesson/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kamataryo.github.io/git-cloud-lesson/" rel="alternate" type="text/html" /><updated>2019-11-13T12:41:24+09:00</updated><id>https://kamataryo.github.io/git-cloud-lesson/feed.xml</id><title type="html">クラウドで Git を扱うレッスン</title><subtitle>これはLD授業のレジュメです。</subtitle><entry><title type="html">JavaScript をターミナル上で実行する</title><link href="https://kamataryo.github.io/git-cloud-lesson/javascript/2019/11/13/execute-javascript-on-terminal.html" rel="alternate" type="text/html" title="JavaScript をターミナル上で実行する" /><published>2019-11-13T09:00:00+09:00</published><updated>2019-11-13T09:00:00+09:00</updated><id>https://kamataryo.github.io/git-cloud-lesson/javascript/2019/11/13/execute-javascript-on-terminal</id><content type="html" xml:base="https://kamataryo.github.io/git-cloud-lesson/javascript/2019/11/13/execute-javascript-on-terminal.html">&lt;h1 id=&quot;javascript-をターミナル上で実行する&quot;&gt;JavaScript をターミナル上で実行する&lt;/h1&gt;
+
+&lt;p&gt;Gitpod を使って作成した JavaScript のプログラムをターミナル上で実行する方法について解説します。JavaScript の実行は Node.js というプログラムを用います。&lt;/p&gt;
+
+&lt;h2 id=&quot;ターミナルを起動する&quot;&gt;ターミナルを起動する&lt;/h2&gt;
+
+&lt;p&gt;ターミナルは、Gitpod の画面下に表示されているテキストの入力が可能なエリアです。&lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; という入力可能な位置を示すマーク（プロンプトと呼ばれます）が表示されています。ここにコマンド呼ばれる命令を入力し、コンピューターを操作します。
+ターミナルは Gitpod を起動した時にデフォルトで表示されているはずですが、見あたらなかった場合メニューバーにある &lt;code class=&quot;highlighter-rouge&quot;&gt;terminal&lt;/code&gt; から &lt;code class=&quot;highlighter-rouge&quot;&gt;New Terminal&lt;/code&gt; というメニューを選択することで表示できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20191112/00-terminal.png&quot; alt=&quot;open terminal&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;nodejs-の確認&quot;&gt;Node.js の確認&lt;/h2&gt;
+
+&lt;p&gt;ターミナルから Node.js のプログラムが存在することを確認します。以下のコマンドを Gitpod のターミナルで実行してください。&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;node &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+v10.15.3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Node.js が存在していることが確認できました。&lt;/p&gt;
+
+&lt;h2 id=&quot;nodejs-のプログラムを-repl-を使って実行する&quot;&gt;Node.js のプログラムを REPL を使って実行する&lt;/h2&gt;
+
+&lt;p&gt;以下のコマンドを実行すると、 REPL と呼ばれるプログラム逐次実行モードが起動します。&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;node
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;REPL では、ターミナルのプロンプトが &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; から &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; という記号に変わります。JavaScirpt のプログラムを一行づつ入力して実行し、評価された値を確認することができます。&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; 1+1
+2
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; const hello &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello&quot;&lt;/span&gt;
+undefined
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; hello + &lt;span class=&quot;s2&quot;&gt;&quot;, World!&quot;&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'Hello, World!'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20191112/02-repl.png&quot; alt=&quot;REPL&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;REPL は、 &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL + C&lt;/code&gt; を 2 回押すと終了できます。&lt;/p&gt;
+
+&lt;h2 id=&quot;ファイルとして作成した-javascript-のプログラムを実行する&quot;&gt;ファイルとして作成した JavaScript のプログラムを実行する&lt;/h2&gt;
+
+&lt;p&gt;以下のコマンドでファイルとして作成した JavaScript のプログラムを実行することができます。 &lt;code class=&quot;highlighter-rouge&quot;&gt;path/to/index.js&lt;/code&gt; には、作成した JavaScript ファイルの &lt;em&gt;パス&lt;/em&gt; を指定してください。&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;node path/to/index.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20191112/03-file.png&quot; alt=&quot;execute file&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ファイルのパスとは&quot;&gt;ファイルのパスとは？&lt;/h3&gt;
+
+&lt;p&gt;ファイルのパスとは、どのフォルダにどのような名前でファイルが格納されているかを文字列で表したものです。例えば、 &lt;code class=&quot;highlighter-rouge&quot;&gt;folder-a&lt;/code&gt; の中に入っている &lt;code class=&quot;highlighter-rouge&quot;&gt;folder-b&lt;/code&gt; の中に入っている &lt;code class=&quot;highlighter-rouge&quot;&gt;index.js&lt;/code&gt; というファイルのパスは、 &lt;code class=&quot;highlighter-rouge&quot;&gt;folder-a/folder-b/index.js&lt;/code&gt; のように表せられます。&lt;/p&gt;
+
+&lt;p&gt;また、この JavaScript プログラムを Node.js で実行するには以下のコマンドを使います。&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;node folder-a/folder-b/index.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>kamataryo</name></author><summary type="html">JavaScript をターミナル上で実行する</summary></entry><entry><title type="html">Google アカウントを作成して Gmail を使えるようにする</title><link href="https://kamataryo.github.io/git-cloud-lesson/google/2019/09/15/create-google-account.html" rel="alternate" type="text/html" title="Google アカウントを作成して Gmail を使えるようにする" /><published>2019-09-15T09:00:00+09:00</published><updated>2019-09-15T09:00:00+09:00</updated><id>https://kamataryo.github.io/git-cloud-lesson/google/2019/09/15/create-google-account</id><content type="html" xml:base="https://kamataryo.github.io/git-cloud-lesson/google/2019/09/15/create-google-account.html">&lt;h1 id=&quot;google-アカウントを作成する&quot;&gt;Google アカウントを作成する&lt;/h1&gt;
+
+&lt;p&gt;Gmail を利用するためには Google アカウントの作成が必要です。このポストでは、Google アカウントの作成の方法について説明します。&lt;/p&gt;
+
+&lt;h2 id=&quot;google-アカウンを作成する手順&quot;&gt;Google アカウンを作成する手順&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Gmail&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;アカウント作成&lt;/code&gt; のようなキーワードで Google 検索を行い、アカウント作成ページに遷移します。次のようなページが表示されるはずです。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;アカウント作成&lt;/code&gt; ボタンをクリックしてアカウントの作成を開始します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/create-gmail-account.png&quot; alt=&quot;creation entry&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;次のようなフォームが表示されます。名前を入力し、メールアドレス、パスワードを決めてください。
+パスワードは他のサービスと使いまわさないようにして、別の値を設定するようにしてください。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/fill-name.png&quot; alt=&quot;fill name&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;次に、電話番号を入力します。すると、認証コードがショートメッセージで送られてきますので、それを画面に入力します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/fill-code.png&quot; alt=&quot;fill code&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;続いて、生年月日や性別などを入力します。必要最小限の入力で構いません。性別は回答しないオプションがあります。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/fill-property.png&quot; alt=&quot;fill property&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;以上で入力が完了です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/completed.png&quot; alt=&quot;completed&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;gmail-を利用する&quot;&gt;Gmail を利用する&lt;/h2&gt;
+
+&lt;p&gt;ブラウザで Google にログインした状態で、&lt;a href=&quot;https://mail.google.com&quot;&gt;https://mail.google.com&lt;/a&gt;に アクセスすると Gmail を利用できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/use-gmail.png&quot; alt=&quot;use gmail&quot; /&gt;&lt;/p&gt;</content><author><name>kamataryo</name></author><summary type="html">Google アカウントを作成する</summary></entry><entry><title type="html">GitHub のリポジトリを公開設定にする</title><link href="https://kamataryo.github.io/git-cloud-lesson/github/2019/07/18/make-repository-public.html" rel="alternate" type="text/html" title="GitHub のリポジトリを公開設定にする" /><published>2019-07-18T12:00:00+09:00</published><updated>2019-07-18T12:00:00+09:00</updated><id>https://kamataryo.github.io/git-cloud-lesson/github/2019/07/18/make-repository-public</id><content type="html" xml:base="https://kamataryo.github.io/git-cloud-lesson/github/2019/07/18/make-repository-public.html">&lt;h1 id=&quot;github-のリポジトリを公開設定にする&quot;&gt;GitHub のリポジトリを公開設定にする&lt;/h1&gt;
+
+&lt;p&gt;プライベート設定で作成した GitHub のリポジトリは、所有者や権限を持っているユーザー以外からは見ることができません。
+これを公開設定（パブリック）にすることで不特定多数に対してリポジトリを閲覧可能にする方法について解説します。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;重要&lt;/strong&gt;
+公開設定にすることができないリポジトリ（公開したくない個人情報や企業秘密など、センシティブな情報を含むもの）に対して、この操作を行わないでください。&lt;/p&gt;
+
+&lt;h2 id=&quot;手順&quot;&gt;手順&lt;/h2&gt;
+
+&lt;p&gt;1) プライベートリポジトリの &lt;code class=&quot;highlighter-rouge&quot;&gt;Settings&lt;/code&gt; を開く&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20190718_01.png&quot; alt=&quot;settings&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2) 下部の &lt;code class=&quot;highlighter-rouge&quot;&gt;Danger Zone&lt;/code&gt; にある &lt;code class=&quot;highlighter-rouge&quot;&gt;Make public&lt;/code&gt; ボタンを押す&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20190718_02.png&quot; alt=&quot;danger zone&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3) ダイアログが出現するのでよく読む。公開設定にすると不特定多数がリポジトリを見ることができる、という旨が書かれている&lt;/p&gt;
+
+&lt;p&gt;4) リポジトリ名を入力して、 &lt;code class=&quot;highlighter-rouge&quot;&gt;I understand, make this repository public.&lt;/code&gt; というボタンを押す。この操作で間違って別のリポジトリの設定変更を行なっていないかをあなた自身が確認できる&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20190718_03.png&quot; alt=&quot;dialog&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;5) パスワードの入力を求められるので入力する&lt;/p&gt;
+
+&lt;p&gt;以上です。なお、同様の手順でリポジトリをプライベートの設定にすることも可能です。&lt;/p&gt;</content><author><name>kamataryo</name></author><summary type="html">GitHub のリポジトリを公開設定にする</summary></entry><entry><title type="html">Gitpod を使う</title><link href="https://kamataryo.github.io/git-cloud-lesson/gitpod/2019/04/17/get-started-with-gitpod.html" rel="alternate" type="text/html" title="Gitpod を使う" /><published>2019-04-17T12:00:00+09:00</published><updated>2019-04-17T12:00:00+09:00</updated><id>https://kamataryo.github.io/git-cloud-lesson/gitpod/2019/04/17/get-started-with-gitpod</id><content type="html" xml:base="https://kamataryo.github.io/git-cloud-lesson/gitpod/2019/04/17/get-started-with-gitpod.html">&lt;h1 id=&quot;gitpod-を使う&quot;&gt;Gitpod を使う&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt; と &lt;a href=&quot;https://gitpod.io&quot;&gt;Gitpod&lt;/a&gt; を連携して利用する方法について解説します。&lt;/p&gt;
+
+&lt;h2 id=&quot;github-でリポジトリを作成する&quot;&gt;GitHub でリポジトリを作成する&lt;/h2&gt;
+
+&lt;p&gt;GitHub のセットアップが終わったら新しいリポジトリを作成してください。ここでは、ユーザーの名前は &lt;code class=&quot;highlighter-rouge&quot;&gt;kamataryo&lt;/code&gt; リポジトリの名前は &lt;code class=&quot;highlighter-rouge&quot;&gt;sandbox-gitpod&lt;/code&gt; という名前だと仮定して説明します。これらは皆さんの環境に読み替えてください。&lt;/p&gt;
+
+&lt;p&gt;GitHub にログインした後で、リポジトリのページ、または右上のプラスのアイコンをクリックするとリポジトリを作成することができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20190417_010_create_repo1.png&quot; alt=&quot;リポジトリ作成ボタン&quot; /&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20190417_010_create_repo2.png&quot; alt=&quot;リポジトリ作成ボタン&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;リポジトリの名前を決定します。
+&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20190417_020_decide_repo_name.png&quot; alt=&quot;リポジトリ名を入力&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;空のリポジトリページができました。
+&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20190417_030_repository_created.png&quot; alt=&quot;空のリポジトリ&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ブラウザの URL バーを見て値を確認してください。私の場合は以下のようになります。&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://github.com/kamataryo/sandbox-gitpod
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;gitpod-でコンテナを起動する&quot;&gt;Gitpod でコンテナを起動する&lt;/h2&gt;
+
+&lt;p&gt;Gitpod のセットアップが終わっていて、ダッシュボードにログインできていることを確認してください。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20190417_100_gitpod_dashboard.png&quot; alt=&quot;Gitpod dashboard&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Gitpod でコンテナを起動する URL を作成します。以下のような URL を作成してください。&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://gitpod.io#&amp;lt;GitHub の URL&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;私の場合は以下のような値になります。&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://gitpod.io#https://github.com/kamataryo/sandbox-gitpod
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;この URL をブラウザに入力すると、 Gitpod のコンテナが起動します。しばらく待つと、開発環境が出来上がります。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20190417_110_gitpod_editor.png&quot; alt=&quot;gitpod editor&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ファイルを作成したり、編集したりできることを確認して下さい。&lt;/p&gt;
+
+&lt;h2 id=&quot;html-を編集する&quot;&gt;HTML を編集する&lt;/h2&gt;
+
+&lt;p&gt;例えば、以下のような値を &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; というファイル名で作成して下さい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-HTML&quot;&gt;&amp;lt;html&amp;gt;
+    &amp;lt;body&amp;gt;
+      &amp;lt;h1&amp;gt;タイトルです&amp;lt;/h1&amp;gt;
+      &amp;lt;p&amp;gt;これはパラグラフです&amp;lt;/p&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;gitpod-のプレビューを行う&quot;&gt;Gitpod のプレビューを行う&lt;/h2&gt;
+
+&lt;p&gt;作成した HTML がどのようにウェブページとして表示されるのかを確認します。
+ページ下部に表示されているコンソール（&lt;code class=&quot;highlighter-rouge&quot;&gt;gitpod /workspace/sandbox-gitpod $&lt;/code&gt; などのような表示とともに、キーボードでの入力が可能なエリアがあります）に、以下のコマンドを入力してください。&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3 &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; http.server 3000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A service is avilable on port 3000&lt;/code&gt; のようなメッセージが上部に表示されます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20190417_120_gitpod_preview.png&quot; alt=&quot;プレビュー&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Open Browser&lt;/code&gt; というボタンをクリックすると、書いた HTML がブラウザで表示されます。&lt;/p&gt;
+
+&lt;p&gt;この状態だと、ターミナルにコマンドの入力ができない状態になっているはずです。 &lt;code class=&quot;highlighter-rouge&quot;&gt;Control + C&lt;/code&gt; でキャンセルすると、再度入力可能な状態に戻ります。&lt;/p&gt;
+
+&lt;h2 id=&quot;作成した内容を-github-にプッシュする&quot;&gt;作成した内容を GitHub にプッシュする&lt;/h2&gt;
+
+&lt;p&gt;以下のコマンドを入力して作成した内容を GitHub にプッシュ（アップロード）します。このことに関する詳細は別の投稿で解説します。&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;HTMLを追加&quot;&lt;/span&gt;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;初回のプッシュでは、 &lt;code class=&quot;highlighter-rouge&quot;&gt;The command requires permissions&lt;/code&gt; のようなメッセージが表示されます。ダイアログにしたがって、適切な権限を Gitpod に与えて下さい。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/20190417_130_gitpod_grant.png&quot; alt=&quot;Gitpod grant&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;プッシュが成功すると、 GitHub に変更が反映されます。上記で確認した GitHub の URL にアクセスして、 &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; が表示されていることを確認して下さい。&lt;/p&gt;</content><author><name>kamataryo</name></author><summary type="html">Gitpod を使う</summary></entry><entry><title type="html">イントロダクション</title><link href="https://kamataryo.github.io/git-cloud-lesson/gitpod,github/2019/04/10/introduction.html" rel="alternate" type="text/html" title="イントロダクション" /><published>2019-04-10T09:00:00+09:00</published><updated>2019-04-10T09:00:00+09:00</updated><id>https://kamataryo.github.io/git-cloud-lesson/gitpod,github/2019/04/10/introduction</id><content type="html" xml:base="https://kamataryo.github.io/git-cloud-lesson/gitpod,github/2019/04/10/introduction.html">&lt;h1 id=&quot;イントロダクション&quot;&gt;イントロダクション&lt;/h1&gt;
+
+&lt;p&gt;この授業では、主にインターネット上のサービスを利用して実習を行います。情報教室のコンピューターだけでなく、皆さんの個人のコンピューターを使って、ブラウザから各サービスにアクセスすることで実習を進めることができます。&lt;/p&gt;
+
+&lt;h2 id=&quot;授業で利用するアプリケーション&quot;&gt;授業で利用するアプリケーション&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;メールアプリ: 学校のサービスなどを適宜利用してください&lt;/li&gt;
+  &lt;li&gt;ブラウザ: &lt;em&gt;重要&lt;/em&gt; Internet Expolorer ではなく &lt;strong&gt;Firefox&lt;/strong&gt; を利用してください&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;授業で利用するウェブサービス&quot;&gt;授業で利用するウェブサービス&lt;/h2&gt;
+
+&lt;p&gt;授業では以下のウェブサービスを利用します。これらの基本的な機能は無料で利用できます。Gitpod は月 100 時間まで無料で利用できます。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;: プログラムを共有するためのサービス&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gitpod.io&quot;&gt;Gitpod&lt;/a&gt;: ブラウザ上でプログラムを作成するための環境を提供するサービス&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;実習のための環境セットアップの手順&quot;&gt;実習のための環境セットアップの手順&lt;/h2&gt;
+
+&lt;h3 id=&quot;github-のアカウントの登録&quot;&gt;GitHub のアカウントの登録&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/join&quot;&gt;サインアップページ&lt;/a&gt; などからアカウントを作成できます。ユーザー名・メールアドレス・パスワードを指定してアカウントを作成してください。サブスクリプション（課金）のオプションは無料を選択してください。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/signup-github.png&quot; alt=&quot;signup github&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;NOTE: 学内の環境から GitHub のアカウントを作成しようとすると、エラーが発生して作成できないケースが多々あります。この場合は、学外のネットワーク（ご自身のモバイル端末など）を使ってアカウントを作成するとスムーズです。&lt;/p&gt;
+
+&lt;p&gt;アカウントの作成を行うと、登録したメールアドレスに GitHub から確認メールが送信されます。メール記載の URL をクリックして、認証を終えてください。&lt;/p&gt;
+
+&lt;p&gt;ここまでで、 GitHub にサインインしたり、リポジトリを作成したりできる状態になりました。&lt;/p&gt;
+
+&lt;h2 id=&quot;gitpod-の登録&quot;&gt;Gitpod の登録&lt;/h2&gt;
+
+&lt;p&gt;GitHub にサインインした状態で &lt;a href=&quot;https://gitpod.io&quot;&gt;gitpod.io&lt;/a&gt; にアクセスし、右上の &lt;code class=&quot;highlighter-rouge&quot;&gt;Go to app&lt;/code&gt; のボタンをクリックします。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/gitpod-go-to-app.png&quot; alt=&quot;gitpod goto app&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Sign in to GitHub to continue to Gitpod&lt;/code&gt; と表示され、GitHub のアカウントを使って Gitpod の利用を開始することができるようになります。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/github-to-gitpod.png&quot; alt=&quot;authorization&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;これは、Twitter でログインする、Facebook でログインする、などと同じ機能です。例えば Instagram に登録するときは、以下のような画面で Facebook から登録するオプションがあるのが分かります。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://kamataryo.github.io/git-cloud-lesson/images/login-with-facebook.png&quot; alt=&quot;インスタグラムの Facebook でログインする例&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ここまでで、 GitHub と連携して Gitpod 使用することができるようになりました。&lt;/p&gt;</content><author><name>kamataryo</name></author><summary type="html">イントロダクション</summary></entry></feed>
