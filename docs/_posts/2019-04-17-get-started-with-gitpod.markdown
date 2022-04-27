@@ -91,7 +91,7 @@ python3 -m http.server 3000
 ```shell
 git add .
 git commit -m"HTMLを追加"
-git push origin master
+git push origin main
 ```
 
 初回のプッシュでは、 `The command requires permissions` のようなメッセージが表示されます。ダイアログにしたがって、適切な権限を Gitpod に与えて下さい。
